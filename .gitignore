@@ -1,0 +1,121 @@
+# ====================================================================
+# AutoMLPro - .gitignore
+# ====================================================================
+
+# ── Python ─────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# ── Virtual Environments ───────────────────────────────────────────
+.env
+.venv
+env/
+venv/
+ENV/
+.pyenv/
+.conda/
+*.conda
+
+# ── IDE & Editor ───────────────────────────────────────────────────
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ── Testing & Coverage ─────────────────────────────────────────────
+.pytest_cache/
+.mypy_cache/
+.coverage
+*.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.log
+
+# ── Data (large files) ─────────────────────────────────────────────
+data/raw/*.csv
+data/raw/*.parquet
+data/raw/*.xlsx
+data/processed/
+data/features/
+data/predictions/
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/features/.gitkeep
+!data/predictions/.gitkeep
+
+# ── Models ─────────────────────────────────────────────────────────
+models/trained/
+models/onnx/
+models/registry/
+!models/trained/.gitkeep
+!models/onnx/.gitkeep
+!models/registry/.gitkeep
+
+# ── Reports (auto-generated) ───────────────────────────────────────
+reports/eda/
+reports/coverage/
+!reports/eda/.gitkeep
+
+# ── MLflow ─────────────────────────────────────────────────────────
+mlruns/
+mlflow.db
+*.mlflow
+
+# ── Environment ────────────────────────────────────────────────────
+.env
+*.env.local
+*.env.production
+
+# ── DVC ────────────────────────────────────────────────────────────
+/tmp
+.dvc/cache
+.dvc/tmp
+
+# ── Jupyter ────────────────────────────────────────────────────────
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+*.ipynb_meta
+
+# ── Hydra ──────────────────────────────────────────────────────────
+outputs/
+multirun/
+.hydra/
+
+# ── Logs ───────────────────────────────────────────────────────────
+*.log
+logs/
+artifacts/logs/
+
+# ── Misc ───────────────────────────────────────────────────────────
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.pth
+Thumbs.db
+.DS_Store

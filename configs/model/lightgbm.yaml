@@ -1,0 +1,29 @@
+# LightGBM model configuration
+name: lightgbm
+class: LightGBMModel
+
+params:
+  n_estimators: 1000
+  learning_rate: 0.05
+  max_depth: -1          # -1 = no limit
+  num_leaves: 31
+  min_child_samples: 20
+  subsample: 0.8
+  colsample_bytree: 0.8
+  reg_alpha: 0
+  reg_lambda: 0
+  n_jobs: -1
+  random_state: 42
+  early_stopping_rounds: 50
+  verbose: -1
+
+hyperparameter_search_space:
+  n_estimators: [100, 2000]
+  learning_rate: [0.001, 0.3]
+  num_leaves: [20, 200]
+  max_depth: [3, 12]
+  min_child_samples: [5, 100]
+  subsample: [0.5, 1.0]
+  colsample_bytree: [0.5, 1.0]
+  reg_alpha: [0, 10]
+  reg_lambda: [0, 10]

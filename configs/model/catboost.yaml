@@ -1,0 +1,25 @@
+# CatBoost model configuration
+name: catboost
+class: CatBoostModel
+
+params:
+  iterations: 1000
+  learning_rate: 0.05
+  depth: 6
+  l2_leaf_reg: 3
+  bagging_temperature: 1
+  random_strength: 1
+  border_count: 128
+  grow_policy: SymmetricTree
+  random_seed: 42
+  early_stopping_rounds: 50
+  verbose: 0
+  thread_count: -1
+
+hyperparameter_search_space:
+  iterations: [100, 2000]
+  learning_rate: [0.001, 0.3]
+  depth: [4, 10]
+  l2_leaf_reg: [1, 10]
+  bagging_temperature: [0, 2]
+  random_strength: [0, 2]

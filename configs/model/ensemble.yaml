@@ -1,0 +1,22 @@
+# Ensemble model configuration
+name: ensemble
+class: EnsembleModel
+
+strategy: stacking        # stacking | blending | voting
+
+base_models:
+  - xgboost
+  - lightgbm
+  - catboost
+
+meta_learner:
+  type: logistic_regression   # logistic_regression | ridge | xgboost
+  cv_folds: 5
+  passthrough: false
+
+blending:
+  weights: null           # null = optimize weights automatically
+  method: average         # average | weighted | rank_average
+
+voting:
+  voting_type: soft       # soft | hard (for classification)

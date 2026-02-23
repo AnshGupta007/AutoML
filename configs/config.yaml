@@ -1,0 +1,55 @@
+# ====================================================================
+# AutoMLPro Master Configuration (Hydra)
+# ====================================================================
+
+defaults:
+  - data: default
+  - features: default
+  - model: ensemble
+  - training: default
+  - deployment: default
+  - monitoring: default
+  - _self_
+
+# ── Application ────────────────────────────────────────────────────
+app:
+  name: AutoMLPro
+  version: "1.0.0"
+  environment: ${oc.env:ENVIRONMENT,development}
+  debug: ${oc.env:DEBUG,false}
+  seed: 42
+
+# ── Paths ──────────────────────────────────────────────────────────
+paths:
+  data_dir: ${oc.env:DATA_DIR,./data}
+  raw_data_dir: ${oc.env:RAW_DATA_DIR,./data/raw}
+  processed_data_dir: ${oc.env:PROCESSED_DATA_DIR,./data/processed}
+  features_dir: ${oc.env:FEATURES_DIR,./data/features}
+  predictions_dir: ${oc.env:PREDICTIONS_DIR,./data/predictions}
+  models_dir: ${oc.env:MODELS_DIR,./models}
+  trained_models_dir: ${oc.env:TRAINED_MODELS_DIR,./models/trained}
+  reports_dir: ${oc.env:REPORTS_DIR,./reports}
+  artifacts_dir: ${oc.env:ARTIFACTS_DIR,./artifacts}
+
+# ── MLflow ─────────────────────────────────────────────────────────
+mlflow:
+  tracking_uri: ${oc.env:MLFLOW_TRACKING_URI,http://localhost:5000}
+  experiment_name: ${oc.env:MLFLOW_EXPERIMENT_NAME,automl-pro-default}
+  run_name: null
+  tags: {}
+
+# ── Logging ────────────────────────────────────────────────────────
+logging:
+  level: ${oc.env:LOG_LEVEL,INFO}
+  format: "{time:YYYY-MM-DD HH:mm:ss} | {level: <8} | {name}:{function}:{line} - {message}"
+  file: ${paths.artifacts_dir}/logs/automl.log
+  rotation: "100 MB"
+  retention: "30 days"
+  serialize: false
+
+# ── Database ───────────────────────────────────────────────────────
+database:
+  url: ${oc.env:DATABASE_URL,sqlite:///./data/automl.db}
+  pool_size: 5
+  max_overflow: 10
+  pool_timeout: 30

@@ -1,0 +1,31 @@
+# Default data configuration
+ingestion:
+  supported_formats: [csv, parquet, excel, json]
+  encoding: utf-8
+  sep: ","
+  low_memory: false
+  max_file_size_mb: 2000
+
+validation:
+  enable: true
+  null_threshold: 0.95    # Drop columns with > 95% nulls
+  duplicate_threshold: 0.50  # Warn if > 50% duplicates
+  min_samples: 100
+  min_features: 2
+
+splitting:
+  strategy: stratified    # random | stratified | time_series | group
+  test_size: 0.20
+  val_size: 0.10
+  shuffle: true
+  random_state: 42
+
+profiling:
+  enable: true
+  output_format: html
+  dark_mode: false
+  explorative: false      # Set true for deeper analysis (slow)
+
+versioning:
+  enable: false           # Enable DVC data versioning
+  remote: null

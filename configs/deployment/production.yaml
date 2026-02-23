@@ -1,0 +1,25 @@
+# Production deployment configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 8
+  reload: false
+  log_level: warning
+  cors_origins: []         # Restrict in production
+
+serialization:
+  formats: [joblib, onnx]
+  compress: true
+
+rate_limiting:
+  enable: true
+  requests_per_minute: 60
+
+authentication:
+  enable: true
+  type: api_key
+
+monitoring:
+  enable: true
+  log_predictions: true
+  log_latency: true

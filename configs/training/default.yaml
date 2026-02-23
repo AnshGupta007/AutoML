@@ -1,0 +1,40 @@
+# Default training configuration
+task:
+  type: auto              # auto | classification | regression
+  metric: auto            # auto | accuracy | f1 | roc_auc | rmse | mae | r2
+
+cross_validation:
+  n_splits: 5
+  strategy: stratified_kfold   # kfold | stratified_kfold | time_series_split
+  shuffle: true
+  random_state: 42
+
+hyperparameter_tuning:
+  enable: true
+  framework: optuna
+  n_trials: 50
+  timeout: 3600           # seconds
+  direction: maximize     # maximize | minimize
+  sampler: TPESampler
+  pruner: HyperbandPruner
+  n_jobs: 1
+
+class_imbalance:
+  strategy: auto          # auto | oversample | undersample | class_weight | none
+  smote: true
+
+early_stopping:
+  enable: true
+  patience: 20
+  min_delta: 0.0001
+
+model_selection:
+  candidates: [xgboost, lightgbm, catboost, linear]  # models to try
+  n_best: 3               # keep top N for ensemble
+  time_budget_per_model: 600  # seconds per model
+
+ensemble:
+  enable: true
+  strategy: stacking
+
+random_seed: 42

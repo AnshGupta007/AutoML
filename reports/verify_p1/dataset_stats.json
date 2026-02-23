@@ -1,0 +1,173 @@
+{
+  "shape": {
+    "rows": 500,
+    "columns": 11
+  },
+  "dtypes": {
+    "feature_0": "float32",
+    "feature_1": "float32",
+    "feature_2": "float32",
+    "feature_3": "float32",
+    "feature_4": "float32",
+    "feature_5": "float32",
+    "feature_6": "float32",
+    "feature_7": "float32",
+    "feature_8": "float32",
+    "feature_9": "float32",
+    "target": "int8"
+  },
+  "memory_mb": 0.02,
+  "null_counts": {
+    "feature_0": 22,
+    "feature_1": 31,
+    "feature_2": 21,
+    "feature_3": 0,
+    "feature_4": 0,
+    "feature_5": 0,
+    "feature_6": 0,
+    "feature_7": 0,
+    "feature_8": 0,
+    "feature_9": 0,
+    "target": 0
+  },
+  "null_percentages": {
+    "feature_0": 4.4,
+    "feature_1": 6.2,
+    "feature_2": 4.2,
+    "feature_3": 0.0,
+    "feature_4": 0.0,
+    "feature_5": 0.0,
+    "feature_6": 0.0,
+    "feature_7": 0.0,
+    "feature_8": 0.0,
+    "feature_9": 0.0,
+    "target": 0.0
+  },
+  "duplicate_rows": 0,
+  "numeric_columns": [
+    "feature_0",
+    "feature_1",
+    "feature_2",
+    "feature_3",
+    "feature_4",
+    "feature_5",
+    "feature_6",
+    "feature_7",
+    "feature_8",
+    "feature_9",
+    "target"
+  ],
+  "categorical_columns": [],
+  "numeric_summary": {
+    "feature_0": {
+      "count": 478.0,
+      "mean": 0.056,
+      "std": 1.8687,
+      "min": -6.5348,
+      "25%": -1.2669,
+      "50%": -0.0462,
+      "75%": 1.4166,
+      "max": 5.7164
+    },
+    "feature_1": {
+      "count": 469.0,
+      "mean": 0.0456,
+      "std": 1.6072,
+      "min": -4.3299,
+      "25%": -1.0918,
+      "50%": 0.0929,
+      "75%": 1.1274,
+      "max": 6.0062
+    },
+    "feature_2": {
+      "count": 479.0,
+      "mean": -0.0081,
+      "std": 1.0063,
+      "min": -2.8391,
+      "25%": -0.711,
+      "50%": 0.0023,
+      "75%": 0.6208,
+      "max": 2.8684
+    },
+    "feature_3": {
+      "count": 500.0,
+      "mean": 0.0557,
+      "std": 1.8987,
+      "min": -4.8391,
+      "25%": -1.4245,
+      "50%": 0.1458,
+      "75%": 1.4414,
+      "max": 5.0664
+    },
+    "feature_4": {
+      "count": 500.0,
+      "mean": -0.4944,
+      "std": 1.7854,
+      "min": -6.2596,
+      "25%": -1.6945,
+      "50%": -0.5423,
+      "75%": 0.6313,
+      "max": 4.4312
+    },
+    "feature_5": {
+      "count": 500.0,
+      "mean": -0.599,
+      "std": 2.5301,
+      "min": -7.2772,
+      "25%": -2.2873,
+      "50%": -0.7362,
+      "75%": 1.057,
+      "max": 8.3452
+    },
+    "feature_6": {
+      "count": 500.0,
+      "mean": 0.0248,
+      "std": 1.0196,
+      "min": -2.9294,
+      "25%": -0.7325,
+      "50%": 0.0184,
+      "75%": 0.702,
+      "max": 3.2431
+    },
+    "feature_7": {
+      "count": 500.0,
+      "mean": 0.4946,
+      "std": 1.7399,
+      "min": -6.8045,
+      "25%": -0.598,
+      "50%": 0.5877,
+      "75%": 1.6257,
+      "max": 5.2799
+    },
+    "feature_8": {
+      "count": 500.0,
+      "mean": -0.5678,
+      "std": 1.8208,
+      "min": -4.594,
+      "25%": -1.8834,
+      "50%": -0.8308,
+      "75%": 0.5885,
+      "max": 6.5621
+    },
+    "feature_9": {
+      "count": 500.0,
+      "mean": -0.9484,
+      "std": 1.2412,
+      "min": -4.5314,
+      "25%": -1.8119,
+      "50%": -1.0111,
+      "75%": -0.0187,
+      "max": 3.103
+    },
+    "target": {
+      "count": 500.0,
+      "mean": 0.5,
+      "std": 0.5005,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.5,
+      "75%": 1.0,
+      "max": 1.0
+    }
+  }
+}

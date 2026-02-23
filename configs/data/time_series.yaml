@@ -1,0 +1,21 @@
+# Time series data configuration
+ingestion:
+  supported_formats: [csv, parquet]
+  encoding: utf-8
+
+validation:
+  enable: true
+  null_threshold: 0.80
+
+splitting:
+  strategy: time_series
+  test_size: 0.20
+  val_size: 0.10
+  shuffle: false         # NEVER shuffle time series
+  random_state: 42
+  date_column: null      # Auto-detect if null
+  gap: 0                 # Gap between train and test
+
+profiling:
+  enable: true
+  output_format: html

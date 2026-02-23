@@ -1,0 +1,22 @@
+# Neural network (tabular) configuration
+name: neural_net
+class: NeuralNetModel
+
+params:
+  hidden_dims: [256, 128, 64]
+  dropout_rate: 0.3
+  learning_rate: 0.001
+  batch_size: 512
+  max_epochs: 200
+  patience: 20            # Early stopping patience
+  optimizer: adam         # adam | sgd | adamw
+  activation: relu        # relu | elu | selu
+  batch_norm: true
+  weight_decay: 0.0001
+  device: auto            # auto | cpu | cuda
+
+hyperparameter_search_space:
+  learning_rate: [0.0001, 0.01]
+  dropout_rate: [0.1, 0.5]
+  batch_size: [128, 1024]
+  weight_decay: [1.0e-5, 0.01]

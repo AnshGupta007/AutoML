@@ -1,0 +1,44 @@
+# Default feature engineering configuration
+type_detection:
+  auto_detect: true
+  categorical_threshold: 50   # Unique values <= 50 → categorical
+  datetime_auto_parse: true
+  text_min_avg_length: 20     # Avg string length > 20 → text feature
+
+imputation:
+  numeric_strategy: median    # mean | median | knn | iterative | constant
+  categorical_strategy: most_frequent  # most_frequent | constant
+  fill_value: "MISSING"
+  knn_neighbors: 5
+
+encoding:
+  default_strategy: target    # onehot | ordinal | target | woe | binary
+  high_cardinality_strategy: target
+  high_cardinality_threshold: 20
+  handle_unknown: use_encoded_value
+
+scaling:
+  strategy: robust            # standard | minmax | robust | none
+  quantile_range: [25.0, 75.0]
+
+feature_generation:
+  enable: true
+  polynomial_degree: 2
+  interaction_features: true
+  ratio_features: true
+  max_generated_features: 100
+
+feature_selection:
+  enable: true
+  method: mutual_info          # mutual_info | chi2 | rfe | lasso | boruta
+  max_features: 50
+  min_importance: 0.001
+
+datetime_features:
+  extract: [year, month, day, hour, dayofweek, quarter, weekofyear, is_weekend]
+  cyclical_encoding: true
+
+text_features:
+  method: tfidf               # tfidf | count | hashing
+  max_features: 1000
+  ngram_range: [1, 2]

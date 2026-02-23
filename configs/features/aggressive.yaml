@@ -1,0 +1,18 @@
+# Aggressive feature generation - maximizes feature count
+feature_generation:
+  enable: true
+  polynomial_degree: 3
+  interaction_features: true
+  ratio_features: true
+  max_generated_features: 500
+  group_aggregations: true
+
+feature_selection:
+  enable: true
+  method: boruta
+  max_features: 150
+  min_importance: 0.0001
+
+encoding:
+  default_strategy: target
+  high_cardinality_threshold: 10

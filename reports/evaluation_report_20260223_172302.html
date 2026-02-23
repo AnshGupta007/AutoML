@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AutoMLPro — Evaluation Report</title>
+<style>
+  body{font-family:Inter,Segoe UI,sans-serif;margin:0;padding:24px;background:#0f172a;color:#e2e8f0}
+  h1{color:#38bdf8;margin-bottom:4px}
+  h2{color:#7dd3fc;border-bottom:1px solid #334155;padding-bottom:8px}
+  .meta{color:#94a3b8;font-size:0.85rem;margin-bottom:32px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:16px;margin-bottom:32px}
+  .card{background:#1e293b;border-radius:12px;padding:20px;text-align:center}
+  .card .value{font-size:2rem;font-weight:700;color:#38bdf8}
+  .card .label{font-size:0.8rem;color:#94a3b8;margin-top:4px}
+  table{width:100%;border-collapse:collapse;margin-bottom:24px}
+  th{background:#1e293b;padding:10px 14px;text-align:left;font-size:0.8rem;color:#94a3b8;text-transform:uppercase}
+  td{padding:10px 14px;border-bottom:1px solid #1e293b;font-size:0.9rem}
+  pre{background:#1e293b;padding:16px;border-radius:8px;overflow-x:auto;font-size:0.8rem;color:#a5f3fc}
+  .badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:0.75rem;font-weight:600}
+  .badge-green{background:#064e3b;color:#6ee7b7}
+  .badge-blue{background:#0c4a6e;color:#7dd3fc}
+  img{max-width:100%;border-radius:12px;margin:16px 0}
+</style>
+</head>
+<body>
+<h1>🤖 AutoMLPro — Evaluation Report</h1>
+<div class="meta">Generated: 2026-02-23 17:23 UTC &nbsp;|&nbsp; Experiment: automl &nbsp;|&nbsp; Model: <span class="badge badge-blue">catboost</span></div>
+
+<h2>📊 Performance Metrics</h2>
+<div class="grid">
+<div class="card"><div class="value">0.6536</div><div class="label">accuracy</div></div>
+<div class="card"><div class="value">0.5831</div><div class="label">balanced_accuracy</div></div>
+<div class="card"><div class="value">0.6432</div><div class="label">precision</div></div>
+<div class="card"><div class="value">0.6536</div><div class="label">recall</div></div>
+<div class="card"><div class="value">0.6133</div><div class="label">f1</div></div>
+<div class="card"><div class="value">0.2139</div><div class="label">mcc</div></div>
+<div class="card"><div class="value">0.1853</div><div class="label">cohen_kappa</div></div>
+<div class="card"><div class="value">0.7077</div><div class="label">roc_auc</div></div>
+<div class="card"><div class="value">0.6485</div><div class="label">average_precision</div></div>
+<div class="card"><div class="value">0.6268</div><div class="label">log_loss</div></div>
+</div>
+
+<h2>🔍 Feature Importances</h2>
+<table><thead><tr><th>Feature</th><th>Importance</th></tr></thead><tbody><tr><td>Ticket</td><td>0.520946</td></tr><tr><td>Name__mr</td><td>0.302471</td></tr><tr><td>Embarked</td><td>0.031604</td></tr><tr><td>Pclass</td><td>0.026264</td></tr><tr><td>poly__PassengerId Fare</td><td>0.018374</td></tr><tr><td>poly__Pclass Parch</td><td>0.015107</td></tr><tr><td>poly__PassengerId Pclass</td><td>0.011901</td></tr><tr><td>Parch</td><td>0.011680</td></tr><tr><td>Age</td><td>0.011234</td></tr><tr><td>ratio__PassengerId__Pclass</td><td>0.009789</td></tr><tr><td>poly__SibSp Fare</td><td>0.008939</td></tr><tr><td>ratio__PassengerId__Age</td><td>0.004354</td></tr><tr><td>poly__Fare^2</td><td>0.003248</td></tr><tr><td>Name__elizabeth</td><td>0.001473</td></tr><tr><td>Name__anna</td><td>0.000703</td></tr><tr><td>Name__gustafsson mr</td><td>0.000360</td></tr><tr><td>Name__august</td><td>0.000172</td></tr><tr><td>Name__douglas</td><td>0.000083</td></tr><tr><td>Name__mrs samuel</td><td>0.000042</td></tr><tr><td>Name__mrs</td><td>0.000000</td></tr></tbody></table>
+
+<h2>⚙️ Configuration</h2>
+<pre>{}</pre>
+
+
+
+</body></html>

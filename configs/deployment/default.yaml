@@ -1,0 +1,27 @@
+# Default deployment configuration
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  reload: false
+  log_level: info
+  cors_origins: ["*"]
+
+serialization:
+  formats: [joblib, onnx]   # joblib | onnx | pickle
+  compress: true
+  compression_level: 3
+
+batch_prediction:
+  enable: true
+  chunk_size: 10000
+  n_jobs: -1
+  output_format: csv        # csv | parquet | json
+
+rate_limiting:
+  enable: true
+  requests_per_minute: 100
+
+authentication:
+  enable: false
+  type: api_key             # api_key | jwt | oauth2

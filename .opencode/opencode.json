@@ -1,0 +1,10 @@
+{
+  "permission": {
+    "read": {
+      "D:/MBA Tech/ML_Project/AutoML/automl-pro/.opencode/get-shit-done/*": "allow"
+    },
+    "external_directory": {
+      "D:/MBA Tech/ML_Project/AutoML/automl-pro/.opencode/get-shit-done/*": "allow"
+    }
+  }
+}

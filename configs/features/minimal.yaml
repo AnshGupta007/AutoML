@@ -1,0 +1,13 @@
+# Minimal feature engineering - fast and simple
+feature_generation:
+  enable: false
+
+feature_selection:
+  enable: false
+
+encoding:
+  default_strategy: onehot
+  high_cardinality_strategy: ordinal
+
+scaling:
+  strategy: standard

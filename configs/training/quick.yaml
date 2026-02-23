@@ -1,0 +1,23 @@
+# Quick training - for development and testing
+task:
+  type: auto
+  metric: auto
+
+cross_validation:
+  n_splits: 3
+  strategy: stratified_kfold
+  shuffle: true
+  random_state: 42
+
+hyperparameter_tuning:
+  enable: false           # Disabled for speed
+
+model_selection:
+  candidates: [xgboost, lightgbm]   # Only fast models
+  n_best: 1
+  time_budget_per_model: 60
+
+ensemble:
+  enable: false           # No ensemble for quick mode
+
+random_seed: 42

@@ -1,0 +1,35 @@
+# Monitoring configuration
+data_drift:
+  enable: true
+  reference_window_days: 30
+  detection_window_days: 7
+  drift_threshold: 0.05
+  method: ks              # ks | psi | wasserstein | chi2
+  features_to_monitor: all   # all | list of column names
+  report_format: html
+
+model_performance:
+  enable: true
+  evaluation_frequency: daily   # hourly | daily | weekly
+  degradation_threshold: 0.10   # Alert if metric drops by X%
+  metrics_to_track:
+    classification: [accuracy, f1, roc_auc, precision, recall]
+    regression: [rmse, mae, r2, mape]
+
+alerting:
+  enable: true
+  channels: [log]         # log | email | slack | webhook
+  email:
+    recipients: []
+    smtp_host: null
+    smtp_port: 587
+  slack:
+    webhook_url: null
+  severity_levels: [warning, critical]
+
+retraining:
+  auto_retrain: false
+  trigger_on_drift: true
+  trigger_on_degradation: true
+  min_samples_for_retrain: 1000
+  retrain_schedule: "0 2 * * 0"   # Every Sunday at 2am (cron)

@@ -1,0 +1,32 @@
+# Full training - maximum accuracy, production-grade
+task:
+  type: auto
+  metric: auto
+
+cross_validation:
+  n_splits: 10
+  strategy: stratified_kfold
+  shuffle: true
+  random_state: 42
+
+hyperparameter_tuning:
+  enable: true
+  n_trials: 200
+  timeout: 14400           # 4 hours
+  sampler: TPESampler
+  pruner: HyperbandPruner
+
+class_imbalance:
+  strategy: auto
+  smote: true
+
+model_selection:
+  candidates: [xgboost, lightgbm, catboost, linear, neural_net]
+  n_best: 5
+  time_budget_per_model: 3600
+
+ensemble:
+  enable: true
+  strategy: stacking
+
+random_seed: 42

@@ -1,0 +1,200 @@
+{
+  "shape": {
+    "rows": 891,
+    "columns": 12
+  },
+  "dtypes": {
+    "PassengerId": "int16",
+    "Survived": "int8",
+    "Pclass": "int8",
+    "Name": "object",
+    "Sex": "object",
+    "Age": "float32",
+    "SibSp": "int8",
+    "Parch": "int8",
+    "Ticket": "object",
+    "Fare": "float32",
+    "Cabin": "object",
+    "Embarked": "object"
+  },
+  "memory_mb": 0.243,
+  "null_counts": {
+    "PassengerId": 0,
+    "Survived": 0,
+    "Pclass": 0,
+    "Name": 0,
+    "Sex": 0,
+    "Age": 177,
+    "SibSp": 0,
+    "Parch": 0,
+    "Ticket": 0,
+    "Fare": 0,
+    "Cabin": 687,
+    "Embarked": 2
+  },
+  "null_percentages": {
+    "PassengerId": 0.0,
+    "Survived": 0.0,
+    "Pclass": 0.0,
+    "Name": 0.0,
+    "Sex": 0.0,
+    "Age": 19.87,
+    "SibSp": 0.0,
+    "Parch": 0.0,
+    "Ticket": 0.0,
+    "Fare": 0.0,
+    "Cabin": 77.1,
+    "Embarked": 0.22
+  },
+  "duplicate_rows": 0,
+  "numeric_columns": [
+    "PassengerId",
+    "Survived",
+    "Pclass",
+    "Age",
+    "SibSp",
+    "Parch",
+    "Fare"
+  ],
+  "categorical_columns": [
+    "Name",
+    "Sex",
+    "Ticket",
+    "Cabin",
+    "Embarked"
+  ],
+  "numeric_summary": {
+    "PassengerId": {
+      "count": 891.0,
+      "mean": 446.0,
+      "std": 257.3538,
+      "min": 1.0,
+      "25%": 223.5,
+      "50%": 446.0,
+      "75%": 668.5,
+      "max": 891.0
+    },
+    "Survived": {
+      "count": 891.0,
+      "mean": 0.3838,
+      "std": 0.4866,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.0,
+      "75%": 1.0,
+      "max": 1.0
+    },
+    "Pclass": {
+      "count": 891.0,
+      "mean": 2.3086,
+      "std": 0.8361,
+      "min": 1.0,
+      "25%": 2.0,
+      "50%": 3.0,
+      "75%": 3.0,
+      "max": 3.0
+    },
+    "Age": {
+      "count": 714.0,
+      "mean": 29.6991,
+      "std": 14.5265,
+      "min": 0.42,
+      "25%": 20.125,
+      "50%": 28.0,
+      "75%": 38.0,
+      "max": 80.0
+    },
+    "SibSp": {
+      "count": 891.0,
+      "mean": 0.523,
+      "std": 1.1027,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.0,
+      "75%": 1.0,
+      "max": 8.0
+    },
+    "Parch": {
+      "count": 891.0,
+      "mean": 0.3816,
+      "std": 0.8061,
+      "min": 0.0,
+      "25%": 0.0,
+      "50%": 0.0,
+      "75%": 0.0,
+      "max": 6.0
+    },
+    "Fare": {
+      "count": 891.0,
+      "mean": 32.2042,
+      "std": 49.6934,
+      "min": 0.0,
+      "25%": 7.9104,
+      "50%": 14.4542,
+      "75%": 31.0,
+      "max": 512.3292
+    }
+  },
+  "categorical_summary": {
+    "Name": {
+      "n_unique": 891,
+      "top_values": {
+        "Braund, Mr. Owen Harris": 1,
+        "Cumings, Mrs. John Bradley (Florence Briggs Thayer)": 1,
+        "Heikkinen, Miss. Laina": 1,
+        "Futrelle, Mrs. Jacques Heath (Lily May Peel)": 1,
+        "Allen, Mr. William Henry": 1,
+        "Moran, Mr. James": 1,
+        "McCarthy, Mr. Timothy J": 1,
+        "Palsson, Master. Gosta Leonard": 1,
+        "Johnson, Mrs. Oscar W (Elisabeth Vilhelmina Berg)": 1,
+        "Nasser, Mrs. Nicholas (Adele Achem)": 1
+      }
+    },
+    "Sex": {
+      "n_unique": 2,
+      "top_values": {
+        "male": 577,
+        "female": 314
+      }
+    },
+    "Ticket": {
+      "n_unique": 681,
+      "top_values": {
+        "347082": 7,
+        "1601": 7,
+        "CA. 2343": 7,
+        "3101295": 6,
+        "CA 2144": 6,
+        "347088": 6,
+        "382652": 5,
+        "S.O.C. 14879": 5,
+        "113760": 4,
+        "19950": 4
+      }
+    },
+    "Cabin": {
+      "n_unique": 147,
+      "top_values": {
+        "G6": 4,
+        "C23 C25 C27": 4,
+        "B96 B98": 4,
+        "F2": 3,
+        "D": 3,
+        "E101": 3,
+        "C22 C26": 3,
+        "F33": 3,
+        "C83": 2,
+        "C123": 2
+      }
+    },
+    "Embarked": {
+      "n_unique": 3,
+      "top_values": {
+        "S": 644,
+        "C": 168,
+        "Q": 77
+      }
+    }
+  }
+}
