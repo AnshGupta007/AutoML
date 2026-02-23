@@ -44,6 +44,8 @@ ENV/
 *.swo
 .DS_Store
 Thumbs.db
+.claude/
+.gemini/
 
 # ── Testing & Coverage ─────────────────────────────────────────────
 .pytest_cache/
