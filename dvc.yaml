@@ -1,0 +1,60 @@
+stages:
+  ingest:
+    cmd: python run_pipeline.py +stage=ingest
+    deps:
+      - data/raw/
+      - src/ingestion/
+      - configs/data/
+    outs:
+      - data/processed/reference.parquet
+    metrics:
+      - artifacts/reports/validation_stats.json:
+          cache: false
+
+  features:
+    cmd: python run_pipeline.py +stage=feature
+    deps:
+      - data/processed/reference.parquet
+      - src/features/
+      - configs/data/default.yaml
+    outs:
+      - data/features/
+
+  train:
+    cmd: python run_pipeline.py +stage=train
+    deps:
+      - data/features/
+      - src/training/
+      - configs/model/
+      - configs/training/default.yaml
+    outs:
+      - artifacts/models/best_model.joblib
+      - artifacts/models/best_model.onnx:
+          cache: false
+      - artifacts/models/metadata.json:
+          cache: false
+    metrics:
+      - artifacts/models/metadata.json:
+          cache: false
+
+  evaluate:
+    cmd: python -c "
+from src.evaluation.reporter import EvaluationReporter;
+import joblib, pandas as pd, json;
+model = joblib.load('artifacts/models/best_model.joblib');
+meta = json.loads(open('artifacts/models/metadata.json').read());
+from src.features.store import FeatureStore;
+store = FeatureStore();
+X_train, X_test, fm = store.load('latest');
+v = store.list_versions()[-1];
+y_train = pd.read_parquet(f'data/features/{v}/y_train.parquet')['target'];
+y_test = pd.read_parquet(f'data/features/{v}/y_test.parquet')['target'];
+r = EvaluationReporter(meta['task_type'], meta['feature_names']);
+r.run(model, X_train, y_train, X_test, y_test);
+"
+    deps:
+      - artifacts/models/best_model.joblib
+      - src/evaluation/
+    outs:
+      - artifacts/reports/:
+          cache: false
